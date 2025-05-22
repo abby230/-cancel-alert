@@ -2,24 +2,40 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>숙소 검색</title>
+  <title>숙소 검색 & 로그인</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>숙박 업소 검색</h1>
-    <form id="searchForm">
-      <input type="text" id="location" placeholder="지역 또는 숙소명 입력" required />
-      
-      <label>체크인 날짜:</label>
-      <input type="date" id="checkin" required />
 
-      <label>체크아웃 날짜:</label>
-      <input type="date" id="checkout" required />
+    <!-- 로그인 / 회원가입 섹션 -->
+    <div id="authSection">
+      <h2>로그인 / 회원가입</h2>
+      <input type="email"    id="email"    placeholder="이메일" />
+      <input type="password" id="password" placeholder="비밀번호" />
+      <button id="loginBtn">로그인</button>
+      <button id="signupBtn">회원가입</button>
+      <hr/>
+    </div>
 
-      <button type="submit">검색</button>
-    </form>
-    <div id="result"></div>
+    <!-- 숙소 검색 섹션 (로그인 후에 보임) -->
+    <div id="searchSection" style="display:none;">
+      <h1>숙박 업소 검색</h1>
+      <form id="searchForm">
+        <input type="text" id="location" placeholder="지역 또는 숙소명 입력" required />
+        <label>체크인 날짜:</label>
+        <input type="date" id="checkin" required />
+        <label>체크아웃 날짜:</label>
+        <input type="date" id="checkout" required />
+        <button type="submit">검색</button>
+      </form>
+      <div id="result"></div>
+    </div>
+
   </div>
 
   <script src="script.js"></script>
