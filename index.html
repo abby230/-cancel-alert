@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>숙소 검색</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>숙박 업소 검색</h1>
+    <form id="searchForm">
+      <input type="text" id="location" placeholder="지역 또는 숙소명 입력" required />
+      
+      <label>체크인 날짜:</label>
+      <input type="date" id="checkin" required />
+
+      <label>체크아웃 날짜:</label>
+      <input type="date" id="checkout" required />
+
+      <button type="submit">검색</button>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
